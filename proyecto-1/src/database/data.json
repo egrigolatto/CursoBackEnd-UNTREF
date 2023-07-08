@@ -1,0 +1,128 @@
+[
+	{
+		"id": 1,
+		"modelo": "Telecaster",
+		"marca": "Fender",
+		"color": "Sunburst"
+	},
+	{
+		"id": 2,
+		"modelo": "Les Paul",
+		"marca": "Gibson",
+		"color": "Negro"
+	},
+	{
+		"id": 3,
+		"modelo": "RG550",
+		"marca": "Ibanez",
+		"color": "Rojo"
+	},
+	{
+		"id": 4,
+		"modelo": "Custom 24",
+		"marca": "PRS",
+		"color": "Azul"
+	},
+	{
+		"id": 5,
+		"modelo": "White Falcon",
+		"marca": "Gretsch",
+		"color": "Blanco"
+	},
+	{
+		"id": 6,
+		"modelo": "Soloist",
+		"marca": "Jackson",
+		"color": "Negro"
+	},
+	{
+		"id": 7,
+		"modelo": "Les Paul Standard",
+		"marca": "Epiphone",
+		"color": "Cherry"
+	},
+	{
+		"id": 8,
+		"modelo": "814ce",
+		"marca": "Taylor",
+		"color": "Natural"
+	},
+	{
+		"id": 9,
+		"modelo": "M-1000",
+		"marca": "ESP",
+		"color": "Negro"
+	},
+	{
+		"id": 10,
+		"modelo": "SG",
+		"marca": "Gibson",
+		"color": "Sunburst"
+	},
+	{
+		"id": 11,
+		"modelo": "Stratocaster",
+		"marca": "Fender",
+		"color": "Blanco"
+	},
+	{
+		"id": 12,
+		"modelo": "RG421",
+		"marca": "Ibanez",
+		"color": "Negro"
+	},
+	{
+		"id": 13,
+		"modelo": "SE Custom 24",
+		"marca": "PRS",
+		"color": "Rojo"
+	},
+	{
+		"id": 14,
+		"modelo": "G2622",
+		"marca": "Gretsch",
+		"color": "Verde"
+	},
+	{
+		"id": 15,
+		"modelo": "Dinky",
+		"marca": "Jackson",
+		"color": "Negro"
+	},
+	{
+		"id": 16,
+		"modelo": "Les Paul Studio",
+		"marca": "Epiphone",
+		"color": "Azul"
+	},
+	{
+		"id": 17,
+		"modelo": "314ce",
+		"marca": "Taylor",
+		"color": "Natural"
+	},
+	{
+		"id": 18,
+		"modelo": "M-400",
+		"marca": "ESP",
+		"color": "Negro"
+	},
+	{
+		"id": 19,
+		"modelo": "Les Paul Traditional",
+		"marca": "Gibson",
+		"color": "Sunburst"
+	},
+	{
+		"id": 20,
+		"modelo": "Jazzmaster",
+		"marca": "Fender",
+		"color": "Blanco"
+	},
+	{
+		"id": 21,
+		"marca": "probando",
+		"color": "azul",
+		"modelo": "guitarra2"
+	}
+]
