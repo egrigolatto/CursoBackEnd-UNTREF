@@ -61,7 +61,7 @@ server.post('/guitarras', async (req, res) => {
         nombre, marca, modelo, color, precio, cuerpo, mastil, diapason, puente, numero_de_trastes, escala, descuento 
     } = req.body;
 
-    if (!nombre || !marca || !modelo || !color || !precio) {
+    if (!nombre && !marca && !modelo && !color && !precio) {
         return res.status(400).send('Error. Faltan ingresar datos de relevancia.');
     }
 
@@ -98,7 +98,7 @@ server.put('/guitarras/:id', async (req, res) => {
 
     const guitarra = { nombre, marca, modelo, color, precio };
 
-    if (!nombre || !marca || !modelo || !color || !precio) {
+    if (!nombre && !marca && !modelo && !color && !precio) {
         return res.status(400).send('Error. Faltan ingresar datos de relevancia.');
     }
 
