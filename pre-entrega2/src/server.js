@@ -9,7 +9,7 @@ server.use(express.urlencoded({ extended: true }));
 //obtener todas las guitaras o aplicarle filtros especificos
 //ruta GET http://127.0.0.1:3000/guitarras
 server.get('/guitarras', async (req, res) => { 
-    const { nombre, marca, modelo, color, precio_menor_que, descuento } = req.query;
+    const { nombre, marca, modelo, color, precio_menor_que, descuento } = req.query; 
     
     //let guitarras = [];
     const filtroDeBusqueda = {};
@@ -61,10 +61,10 @@ server.post('/guitarras', async (req, res) => {
         nombre, marca, modelo, color, precio, cuerpo, mastil, diapason, puente, numero_de_trastes, escala, descuento 
     } = req.body;
 
-    if (!nombre && !marca && !modelo && !color && !precio) {
+    if (!nombre || !marca || !modelo || !color || !precio) {
         return res.status(400).send('Error. Faltan ingresar datos de relevancia.');
     }
-
+    // mmm aca volvi a cambiar && por ||
     try {
         const collection = await conectToDb('guitarras');
         const guitarra = { id: await generateId(collection), nombre, marca, modelo, color, precio };
@@ -92,7 +92,7 @@ server.post('/guitarras', async (req, res) => {
 //ruta PUT http://127.0.0.1:3000/guitarra/id
 server.put('/guitarras/:id', async (req, res) => {
     const { id } = req.params;
-    
+
     const { 
         nombre, marca, modelo, color, precio, cuerpo, mastil, diapason, puente, numero_de_trastes, escala, descuento 
     } = req.body;
