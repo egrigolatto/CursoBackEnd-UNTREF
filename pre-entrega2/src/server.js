@@ -11,7 +11,6 @@ server.use(express.urlencoded({ extended: true }));
 server.get('/guitarras', async (req, res) => { 
     const { nombre, marca, modelo, color, precio_menor_que, descuento } = req.query; 
     
-    //let guitarras = [];
     const filtroDeBusqueda = {};
 
     if (nombre) filtroDeBusqueda.nombre = nombre;
