@@ -1,8 +1,7 @@
 const sequelize = require('../connection/connection');
 const { DataTypes } = require('sequelize');
 
-
-const contenido = sequelize.define('contenido', {
+const contenidos = sequelize.define('contenidos', {
     contenido_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -11,33 +10,33 @@ const contenido = sequelize.define('contenido', {
       unique: true
     },
     titulo: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      default: 'N/A'
+      type: DataTypes.STRING(250),
+      allowNull: false
     },
     resumen: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(1000),
       default: 'N/A'
     },
     temporadas: {
       type: DataTypes.INTEGER,
-      default: 'N/A'
+      default: '0'
     },  
     poster: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(250),
       default: 'N/A'
     },
     trailer: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(250),
         default: 'N/A'
     },
     categoria_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     }
 }, {
-  tableName: 'contenido',
+  tableName: 'contenidos',
   timestamps: false,
 });
 
-module.exports = contenido;
+
+module.exports = contenidos;

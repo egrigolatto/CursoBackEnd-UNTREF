@@ -2,12 +2,13 @@ const sequelize = require('../connection/connection');
 const { DataTypes } = require('sequelize');
 
 
-const contenido_genero = sequelize.define('contenido_genero', {
+const contenidos_generos = sequelize.define('contenidos_generos', {
     contenido_genero_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
+        unique: true
     },
     contenido_id: {
         type: DataTypes.INTEGER,
@@ -18,8 +19,8 @@ const contenido_genero = sequelize.define('contenido_genero', {
         allowNull: false,
     }
 }, {
-    tableName: 'contenido_genero',
+    tableName: 'contenidos_generos',
     timestamps: false,
 });
 
-module.exports = contenido_genero;
+module.exports = contenidos_generos;

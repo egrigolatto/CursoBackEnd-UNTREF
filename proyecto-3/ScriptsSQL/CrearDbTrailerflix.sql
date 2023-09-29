@@ -23,49 +23,49 @@ CREATE TABLE `categorias` (
 
 DROP TABLE IF EXISTS `generos`;
 CREATE TABLE `generos` (
-	`generos_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
-	`generos_nombre` varchar(50) NOT NULL,
-	PRIMARY KEY (`generos_id`)
+	`genero_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+	`genero_nombre` varchar(50) NOT NULL,
+	PRIMARY KEY (`genero_id`)
 ) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS `actores`;
 CREATE TABLE `actores` (
-	`actores_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
-	`actores_nombre` varchar(70) NOT NULL,
-	PRIMARY KEY (`actores_id`)
+	`actor_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+	`actor_nombre` varchar(100) NOT NULL,
+	PRIMARY KEY (`actor_id`)
 ) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `contenido`;
-CREATE TABLE `contenido` (
+DROP TABLE IF EXISTS `contenidos`;
+CREATE TABLE `contenidos` (
 	`contenido_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
-	`titulo` varchar(150) DEFAULT 'N/A',
+	`titulo` varchar(250) NOT NULL,
 	`resumen` varchar(1000) DEFAULT 'N/A',
 	`temporadas` INT DEFAULT '0',
-	`poster` varchar(200) DEFAULT 'N/A',
-	`trailer` varchar(200) DEFAULT 'N/A',
+	`poster` varchar(250) DEFAULT 'N/A',
+	`trailer` varchar(250) DEFAULT 'N/A',
 	`categoria_id` INT,
 	PRIMARY KEY (`contenido_id`),
 	FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`categoria_id`)
 ) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `contenido_genero`;
-CREATE TABLE `contenido_genero` (
+DROP TABLE IF EXISTS `contenidos_generos`;
+CREATE TABLE `contenidos_generos` (
 	`contenido_genero_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`contenido_id` INT NOT NULL,
 	`genero_id` INT NOT NULL,
 	PRIMARY KEY (`contenido_genero_id`),
-	FOREIGN KEY (`contenido_id`) REFERENCES `contenido`(`contenido_id`),
-	FOREIGN KEY (`genero_id`) REFERENCES `generos`(`generos_id`)
+	FOREIGN KEY (`contenido_id`) REFERENCES `contenidos`(`contenido_id`),
+	FOREIGN KEY (`genero_id`) REFERENCES `generos`(`genero_id`)
 ) ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `contenido_actores`;
-CREATE TABLE `contenido_actores` (
-	`contenido_actores_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+DROP TABLE IF EXISTS `contenidos_actores`;
+CREATE TABLE `contenidos_actores` (
+	`contenido_actor_id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`contenido_id` INT NOT NULL,
-	`actores_id` INT NOT NULL,
-	PRIMARY KEY (`contenido_actores_id`),
-	FOREIGN KEY (`contenido_id`) REFERENCES `contenido`(`contenido_id`),
-	FOREIGN KEY (`actores_id`) REFERENCES `actores`(`actores_id`)
+	`actor_id` INT NOT NULL,
+	PRIMARY KEY (`contenido_actor_id`),
+	FOREIGN KEY (`contenido_id`) REFERENCES `contenidos`(`contenido_id`),
+	FOREIGN KEY (`actor_id`) REFERENCES `actores`(`actor_id`)
 ) ENGINE=InnoDB;
 --
 -- Carga de datos en las tablas
@@ -75,7 +75,7 @@ value
 (1,"Serie"), 
 (2,"Pelicula");
 
-INSERT INTO actores (actores_id, actores_nombre)
+INSERT INTO actores (actor_id, actor_nombre)
 VALUES 
 (1,"Pedro Pascal"),
 (2,"Carl Weathers"),
@@ -288,7 +288,7 @@ VALUES
 (209,"Burn Gorman")
 ;
 
-INSERT INTO generos (generos_id, generos_nombre)
+INSERT INTO generos (genero_id, genero_nombre)
 VALUES
 (1,"Ciencia Ficción"),
 (2,"Fantasía"),
@@ -310,7 +310,7 @@ VALUES
 (18,"Historia"),
 (19,"Intriga");
 
-INSERT INTO contenido(contenido_id, poster, titulo, categoria_id, resumen, temporadas, trailer) 
+INSERT INTO contenidos(contenido_id, poster, titulo, categoria_id, resumen, temporadas, trailer) 
 values 
   ( 
     1,
@@ -629,7 +629,7 @@ values
   )
 ;
 
-INSERT INTO contenido_genero (contenido_id, genero_id) 
+INSERT INTO contenidos_generos (contenido_id, genero_id) 
 VALUES 
 (1,3),
 (1,7),
@@ -729,7 +729,7 @@ VALUES
 (35,12)
 ;
 
-INSERT INTO contenido_actores (contenido_id, actores_id) 
+INSERT INTO contenidos_actores (contenido_id, actor_id) 
 VALUES 
 (1,25),
 (1,26),

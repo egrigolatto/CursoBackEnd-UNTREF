@@ -2,22 +2,25 @@ const sequelize = require('../connection/connection');
 const { DataTypes } = require('sequelize');
 
 
-const generos = sequelize.define('generos', {
-    generos_id: {
+const contenidos_actores = sequelize.define('contenidos_actores', {
+    contenido_actor_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
         unique: true
     },
-    generos_nombre: {
-        type: DataTypes.STRING,
+    contenido_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        default: 'N/A'
     },
+    actor_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    }
 }, {
-    tableName: 'generos',
+    tableName: 'contenidos_actores',
     timestamps: false,
 });
 
-module.exports = generos;
+module.exports = contenidos_actores;
